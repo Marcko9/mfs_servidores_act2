@@ -1,0 +1,38 @@
+CREATE 
+POST 
+    Ruta: /users
+    OK: 201 Creado de manera correcta, 
+    Error: 400 (Error en la creación)
+    Return: {} Objeto
+
+
+READ
+GET 
+    Ruta: /users
+    OK: 200
+    Error: No hay, el usuario no puede mandar parámetro incorrecto
+    Return: [] Array
+
+GET 
+    Ruta: /users/:id
+    OK: 200
+    Error: 404, si el usuario no existe
+    Return: {} Objeto
+
+
+UPDATE
+PUT -> Todos los campos del objeto tienen que ser enviados, en caso contrario los valores no enviados serán borrados
+PATCH -> Solo se envían los valores de las propiedades del objeto que cambian, las no enviadas siguen con eel valor almacenado
+    Ruta: /users/:id
+    OK: 200
+    Error:
+        400: Datos enviados de manera incorrecta 
+        404: Empleado no existe
+    Return: {} Objeto
+
+
+DELETE 
+    Ruta: /users/:id
+    OK: 204
+    Error: 404, si el usuario no existe
+    Return: 
